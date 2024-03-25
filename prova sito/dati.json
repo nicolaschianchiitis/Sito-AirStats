@@ -1,0 +1,42 @@
+[
+    {
+        "name":"macchina1",
+        "listadati": [
+            {
+                "mese":2,
+                "polveriSottili":10,
+                "co2":45
+            },
+            {
+                "mese":3,
+                "polveriSottili":35,
+                "co2":49
+            },
+            {
+                "mese":3,
+                "polveriSottili":20,
+                "co2":80
+            }
+        ]
+    },
+    {
+        "name":"macchina2",
+        "listadati": [
+            {
+                "mese":2,
+                "polveriSottili":12,
+                "co2":56
+            },
+            {
+                "mese":3,
+                "polveriSottili":56,
+                "co2":22
+            },
+            {
+                "mese":3,
+                "polveriSottili":12,
+                "co2":56
+            }
+        ]
+    }
+]
