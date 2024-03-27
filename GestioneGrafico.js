@@ -52,12 +52,93 @@ function creazioneGraficoBarre(dati,indexMacchina){
         });
         var divGravico= document.createElement('div');
         divGravico.style.border='black solid 2px'
+        divGravico.style.width='50%'
+        divGravico.style.height='25%'
+        divGravico.className = 'col border border-info  border-opacity-50'
         var labelNomeDispositivo= document.createElement('h1')
         var nomeDispositivo= dati[indexMacchina].name
         labelNomeDispositivo.textContent= nomeDispositivo
         var containerGrafici = document.getElementById("containerGrafici");
         divGravico.appendChild(ctx)
         containerGrafici.appendChild(labelNomeDispositivo)
+        containerGrafici.appendChild(divGravico);
+}
+function creazioneGraficoDonat(dati,indexMacchina){
+    var [mediePolveri,medieCO2]=calcolaMedia(dati,indexMacchina);
+    var [mediePolveri,medieCO2]=calcolaMedia(dati,indexMacchina);
+    var data1 = {
+        labels: ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto","Settembre","Ottobbre","Novembre","Dicembre"],
+        datasets: [
+            {
+                label: 'CO2',
+                data:medieCO2,
+                backgroundColor: [
+                  'rgb(255, 99, 132)',
+                  'rgb(54, 162, 235)',
+                  'rgb(255, 205, 86)'
+                ],
+                hoverOffset: 4
+            }, 
+            {
+                label: 'PM10',
+                data: mediePolveri,
+                backgroundColor: [
+                  'rgb(255, 99, 132)',
+                  'rgb(54, 162, 235)',
+                  'rgb(255, 205, 86)'
+                ],
+                hoverOffset: 4
+            }
+        ]
+    };
+    var ctx = document.createElement("canvas");
+    var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: data1
+    });
+    var divGravico= document.createElement('div');
+    divGravico.style.border='black solid 2px'
+    divGravico.style.margin = '10px'
+    divGravico.style.width='50%'
+    divGravico.style.height='auto'
+    divGravico.className = 'col border border-info  border-opacity-50'
+    var containerGrafici = document.getElementById("containerGrafici2");
+    divGravico.appendChild(ctx);
+    containerGrafici.appendChild(divGravico);
+}
+function creazioneGraficoPunti(dati,indexMacchina){
+    var [mediePolveri,medieCO2]=calcolaMedia(dati,indexMacchina);
+        var data = {
+            labels: ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto","Settembre","Ottobbre","Novembre","Dicembre"],
+            datasets: [
+                {
+                    label: "CO2",
+                    fill: true,
+                    backgroundColor: "rgba(0, 102, 204,1)",
+                    borderColor: "rgba(0, 102, 204,1)",
+                    data: medieCO2
+                },
+                {
+                    label: "POLVERI SOTTILI",
+                    fill: true,
+                    backgroundColor: "rgba(128, 0, 128,1)",
+                    borderColor: "rgba(128, 0, 128,1)",
+                    data: mediePolveri
+                }
+            ]
+        };
+        var ctx = document.createElement("canvas");
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: data
+        });
+        var divGravico= document.createElement('div');
+        divGravico.style.border='black solid 2px'
+        divGravico.style.width='50%'
+        divGravico.style.height='25%'
+        divGravico.className = 'col border border-info  border-opacity-50'
+        var containerGrafici = document.getElementById("containerGrafici");
+        divGravico.appendChild(ctx)
         containerGrafici.appendChild(divGravico);
 }
 function gestoreGrafico(NM){
@@ -80,7 +161,9 @@ function gestoreGrafico(NM){
                 }
             }
             resetContainerGrafico();
-            creazioneGraficoBarre(listaDispositivi,indexMacchina)
+            creazioneGraficoBarre(listaDispositivi,indexMacchina);
+            creazioneGraficoPunti(listaDispositivi,indexMacchina);
+            creazioneGraficoDonat(listaDispositivi,indexMacchina);
         }
     }
 }
