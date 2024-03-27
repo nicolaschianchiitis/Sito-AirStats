@@ -4,27 +4,30 @@ function resetContainerGrafico(){
         containerGrafici.removeChild(containerGrafici.firstChild);
       }
 }
-function creazioneGraficoBarre(dati,indexMacchina){
-        mediePolveri=[0,0,0,0,0,0,0,0,0,0,0,0];
-        medieCO2=[0,0,0,0,0,0,0,0,0,0,0,0];
-        mediecCO2=[0,0,0,0,0,0,0,0,0,0,0,0];//contatori
-        mediecPolveri=[0,0,0,0,0,0,0,0,0,0,0,0];//contatori
-        var listaDati=dati[indexMacchina].listaDati
-        listaDati.forEach(dato => {    
-            medieCO2[(dato.mese)-1]+=dato.co2;
-            mediecCO2[(dato.mese)-1]+=1;
-            mediePolveri[(dato.mese)-1]+=dato.polveriSottili;
-            mediecPolveri[(dato.mese)-1]+=1;
-        });
-        for(let i=0;i<12;i++){
-            if(medieCO2[i]!=0){
-                medieCO2[i]=medieCO2[i]/mediecCO2[i];
-            }
-            if(mediePolveri[i]!=0){
-                mediePolveri[i]=mediePolveri[i]/mediecPolveri[i];
-            }
+function calcolaMedia(dati,indexMacchina){
+    var mediePolveri=[0,0,0,0,0,0,0,0,0,0,0,0];
+    var medieCO2=[0,0,0,0,0,0,0,0,0,0,0,0];
+    var mediecCO2=[0,0,0,0,0,0,0,0,0,0,0,0];//contatori
+    var mediecPolveri=[0,0,0,0,0,0,0,0,0,0,0,0];//contatori
+    var listaDati=dati[indexMacchina].listaDati
+    listaDati.forEach(dato => {    
+        medieCO2[(dato.mese)-1]+=dato.co2;
+        mediecCO2[(dato.mese)-1]+=1;
+        mediePolveri[(dato.mese)-1]+=dato.polveriSottili;
+        mediecPolveri[(dato.mese)-1]+=1;
+    });
+    for(let i=0;i<12;i++){
+        if(medieCO2[i]!=0){
+            medieCO2[i]=medieCO2[i]/mediecCO2[i];
         }
-
+        if(mediePolveri[i]!=0){
+            mediePolveri[i]=mediePolveri[i]/mediecPolveri[i];
+        }
+    }
+    return [mediePolveri,medieCO2];
+}
+function creazioneGraficoBarre(dati,indexMacchina){
+        var [mediePolveri,medieCO2]=calcolaMedia(dati,indexMacchina);
         var data = {
             labels: ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto","Settembre","Ottobbre","Novembre","Dicembre"],
             datasets: [
