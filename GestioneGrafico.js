@@ -1,8 +1,12 @@
 function resetContainerGrafico(){
     var containerGrafici = document.getElementById("containerGrafici");
+    var containerGrafici2 = document.getElementById("containerGrafici2");
     while (containerGrafici.firstChild) {
-        containerGrafici.removeChild(containerGrafici.firstChild);
-      }
+        containerGrafici.removeChild(containerGrafici.firstChild)
+    }
+    if(containerGrafici2.childNodes[2]){
+        containerGrafici2.removeChild(containerGrafici2.childNodes[2]);
+    }
 }
 function calcolaMedia(dati,indexMacchina){
     var mediePolveri=[0,0,0,0,0,0,0,0,0,0,0,0];
@@ -167,4 +171,4 @@ function gestoreGrafico(NM){
         }
     }
 }
-setInterval(gestoreGrafico(""),600);
+setInterval(gestoreGrafico(""),5000);

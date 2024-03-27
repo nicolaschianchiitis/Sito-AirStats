@@ -32,4 +32,4 @@ function gestoreDropdown(){
         }
     }
 }
-setInterval(gestoreDropdown(),600);
+setInterval(gestoreDropdown(),5000);
