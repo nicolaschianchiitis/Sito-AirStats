@@ -31,43 +31,43 @@ function calcolaMedia(dati,indexMacchina){
     return [mediePolveri,medieCO2];
 }
 function creazioneGraficoBarre(dati,indexMacchina){
-        var [mediePolveri,medieCO2]=calcolaMedia(dati,indexMacchina);
-        var data = {
-            labels: ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto","Settembre","Ottobbre","Novembre","Dicembre"],
-            datasets: [
-                {
-                    label: "CO2",
-                    backgroundColor: "rgba(0, 102, 204,1)",
-                    borderColor: "rgba(99,240,220,1)",
-                    data: medieCO2
-                },
-                {
-                    label: "POLVERI SOTTILI",
-                    backgroundColor: "rgba(128, 0, 128,1)",
-                    borderColor: "rgba(205,99,151,1)",
-                    data: mediePolveri
-                }
-            ]
-        };
-        var ctx = document.createElement("canvas");
-        var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: data
-        });
-        var divGravico= document.createElement('div');
-        divGravico.style.border='black solid 2px'
-        divGravico.style.width='50%'
-        divGravico.style.height='25%'
-        divGravico.className = 'col border border-info  border-opacity-50'
-        var labelNomeDispositivo= document.createElement('h1')
-        var nomeDispositivo= dati[indexMacchina].name
-        labelNomeDispositivo.textContent= nomeDispositivo
-        var containerGrafici = document.getElementById("containerGrafici");
-        divGravico.appendChild(ctx)
-        containerGrafici.appendChild(labelNomeDispositivo)
-        containerGrafici.appendChild(divGravico);
+    var [mediePolveri,medieCO2]=calcolaMedia(dati,indexMacchina);
+    var data = {
+        labels: ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto","Settembre","Ottobbre","Novembre","Dicembre"],
+        datasets: [
+            {
+                label: "CO2",
+                backgroundColor: "rgba(0, 102, 204,1)",
+                borderColor: "rgba(99,240,220,1)",
+                data: medieCO2
+            },
+            {
+                label: "POLVERI SOTTILI",
+                backgroundColor: "rgba(128, 0, 128,1)",
+                borderColor: "rgba(205,99,151,1)",
+                data: mediePolveri
+            }
+        ]
+    };
+    var ctx = document.createElement("canvas");
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: data
+    });
+    var divGrafico= document.createElement('div');
+    divGrafico.style.border='black solid 2px'
+    divGrafico.style.width='50%'
+    divGrafico.style.height='25%'
+    divGrafico.className = 'col border border-info border-opacity-50'
+    var labelNomeDispositivo= document.createElement('h1')
+    var nomeDispositivo= dati[indexMacchina].name
+    labelNomeDispositivo.textContent= nomeDispositivo
+    var containerGrafici = document.getElementById("containerGrafici");
+    divGrafico.appendChild(ctx)
+    containerGrafici.appendChild(labelNomeDispositivo)
+    containerGrafici.appendChild(divGrafico);
 }
-function creazioneGraficoDonat(dati,indexMacchina){
+function creazioneGraficoDonut(dati,indexMacchina){
     var [mediePolveri,medieCO2]=calcolaMedia(dati,indexMacchina);
     var [mediePolveri,medieCO2]=calcolaMedia(dati,indexMacchina);
     var data1 = {
@@ -100,50 +100,51 @@ function creazioneGraficoDonat(dati,indexMacchina){
         type: 'doughnut',
         data: data1
     });
-    var divGravico= document.createElement('div');
-    divGravico.style.border='black solid 2px'
-    divGravico.style.margin = '10px'
-    divGravico.style.width='50%'
-    divGravico.style.height='auto'
-    divGravico.className = 'col border border-info  border-opacity-50'
+    var divGrafico= document.createElement('div');
+    divGrafico.style.border='black solid 2px'
+    divGrafico.style.margin = '10px'
+    divGrafico.style.width='50%'
+    divGrafico.style.height='auto'
+    divGrafico.className = 'col border border-info  border-opacity-50'
     var containerGrafici = document.getElementById("containerGrafici2");
-    divGravico.appendChild(ctx);
-    containerGrafici.appendChild(divGravico);
+    divGrafico.appendChild(ctx);
+    containerGrafici.appendChild(divGrafico);
 }
+
 function creazioneGraficoPunti(dati,indexMacchina){
     var [mediePolveri,medieCO2]=calcolaMedia(dati,indexMacchina);
-        var data = {
-            labels: ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto","Settembre","Ottobbre","Novembre","Dicembre"],
-            datasets: [
-                {
-                    label: "CO2",
-                    fill: true,
-                    backgroundColor: "rgba(0, 102, 204,1)",
-                    borderColor: "rgba(0, 102, 204,1)",
-                    data: medieCO2
-                },
-                {
-                    label: "POLVERI SOTTILI",
-                    fill: true,
-                    backgroundColor: "rgba(128, 0, 128,1)",
-                    borderColor: "rgba(128, 0, 128,1)",
-                    data: mediePolveri
-                }
-            ]
-        };
-        var ctx = document.createElement("canvas");
-        var myChart = new Chart(ctx, {
-            type: 'line',
-            data: data
-        });
-        var divGravico= document.createElement('div');
-        divGravico.style.border='black solid 2px'
-        divGravico.style.width='50%'
-        divGravico.style.height='25%'
-        divGravico.className = 'col border border-info  border-opacity-50'
-        var containerGrafici = document.getElementById("containerGrafici");
-        divGravico.appendChild(ctx)
-        containerGrafici.appendChild(divGravico);
+    var data = {
+        labels: ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto","Settembre","Ottobbre","Novembre","Dicembre"],
+        datasets: [
+            {
+                label: "CO2",
+                fill: true,
+                backgroundColor: "rgba(0, 102, 204,1)",
+                borderColor: "rgba(0, 102, 204,1)",
+                data: medieCO2
+            },
+            {
+                label: "POLVERI SOTTILI",
+                fill: true,
+                backgroundColor: "rgba(128, 0, 128,1)",
+                borderColor: "rgba(128, 0, 128,1)",
+                data: mediePolveri
+            }
+        ]
+    };
+    var ctx = document.createElement("canvas");
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: data
+    });
+    var divGrafico= document.createElement('div');
+    divGrafico.style.border='black solid 2px'
+    divGrafico.style.width='50%'
+    divGrafico.style.height='25%'
+    divGrafico.className = 'col border border-info  border-opacity-50'
+    var containerGrafici = document.getElementById("containerGrafici");
+    divGrafico.appendChild(ctx)
+    containerGrafici.appendChild(divGrafico);
 }
 function gestoreGrafico(NM){
     let requesturl='./dati.json';
@@ -167,7 +168,7 @@ function gestoreGrafico(NM){
             resetContainerGrafico();
             creazioneGraficoBarre(listaDispositivi,indexMacchina);
             creazioneGraficoPunti(listaDispositivi,indexMacchina);
-            creazioneGraficoDonat(listaDispositivi,indexMacchina);
+            creazioneGraficoDonut(listaDispositivi,indexMacchina);
         }
     }
 }
