@@ -54,28 +54,28 @@ function creazioneGraficoBarre(dati,indexMacchina){
         type: 'bar',
         data: data
     });
-    var divGrafico= document.createElement('div');
-    divGrafico.style.border='black solid 2px'
-    divGrafico.style.width='50%'
-    divGrafico.style.height='25%'
-    divGrafico.className = 'col border border-info border-opacity-50'
-    var labelNomeDispositivo= document.createElement('h1')
-    var nomeDispositivo= dati[indexMacchina].name
-    labelNomeDispositivo.textContent= nomeDispositivo
+    var divGrafico = document.createElement('div');
+    divGrafico.style.width ='50%'
+    divGrafico.style.height ='25%'
+    divGrafico.className = 'col'
+    var labelNomeDispositivo = document.createElement('h1')
+    var nomeDispositivo = dati[indexMacchina].name
+    labelNomeDispositivo.textContent = nomeDispositivo
     var containerGrafici = document.getElementById("containerGrafici");
     divGrafico.appendChild(ctx)
     containerGrafici.appendChild(labelNomeDispositivo)
+    containerGrafici.innerHTML += "<br><br><br>"
     containerGrafici.appendChild(divGrafico);
 }
 function creazioneGraficoDonut(dati,indexMacchina){
-    var [mediePolveri,medieCO2]=calcolaMedia(dati,indexMacchina);
-    var [mediePolveri,medieCO2]=calcolaMedia(dati,indexMacchina);
+    var [mediePolveri,medieCO2] = calcolaMedia(dati,indexMacchina);
+    var [mediePolveri,medieCO2] = calcolaMedia(dati,indexMacchina);
     var data1 = {
         labels: ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto","Settembre","Ottobbre","Novembre","Dicembre"],
         datasets: [
             {
                 label: 'CO2',
-                data:medieCO2,
+                data: medieCO2,
                 backgroundColor: [
                   'rgb(255, 99, 132)',
                   'rgb(54, 162, 235)',
@@ -98,14 +98,13 @@ function creazioneGraficoDonut(dati,indexMacchina){
     var ctx = document.createElement("canvas");
     var myChart = new Chart(ctx, {
         type: 'doughnut',
-        data: data1
+        data: data1,
     });
-    var divGrafico= document.createElement('div');
-    divGrafico.style.border='black solid 2px'
+    var divGrafico = document.createElement('div');
     divGrafico.style.margin = '10px'
     divGrafico.style.width='50%'
     divGrafico.style.height='auto'
-    divGrafico.className = 'col border border-info  border-opacity-50'
+    divGrafico.className = 'col'
     var containerGrafici = document.getElementById("containerGrafici2");
     divGrafico.appendChild(ctx);
     containerGrafici.appendChild(divGrafico);
@@ -138,10 +137,9 @@ function creazioneGraficoPunti(dati,indexMacchina){
         data: data
     });
     var divGrafico= document.createElement('div');
-    divGrafico.style.border='black solid 2px'
     divGrafico.style.width='50%'
     divGrafico.style.height='25%'
-    divGrafico.className = 'col border border-info  border-opacity-50'
+    divGrafico.className = 'col'
     var containerGrafici = document.getElementById("containerGrafici");
     divGrafico.appendChild(ctx)
     containerGrafici.appendChild(divGrafico);
