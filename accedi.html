@@ -77,7 +77,19 @@
         <p id="utenteConnesso" style="margin-left: 1%; margin-top: 1%;"></p>
     </nav>
     <!-- Titoli pagina -->
-    <h1 class="h1 text-center text-info shadow p-3 mb-5 bg-body-tertiary rounded">HOME PAGE</h1>
+    <h1 class="h1 text-center text-info shadow p-3 mb-5 bg-body-tertiary rounded">ACCEDI</h1>
+    <!-- Form di accesso -->
+    <div class="mb-3" style="width: 30%; margin-left: 35%;">
+      <label for="email" class="form-label">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="luca.rossi@icloud.com">
+      <span id="infoEmail" class="form-text"></span>
+      <label for="pw" class="col-form-label">Password:</label>
+      <input type="password" id="pw" class="form-control" aria-describedby="passwordHelpInline">
+      <span id="infoPw" class="form-text"></span>
+      <br>
+      <button type="button" class="btn btn-success" id="okAccedi" style="margin-left: 18%;">Conferma</button>
+      <button type="button" class="btn btn-danger" id="cancellaAccedi" style="margin-left: 15%;">Cancella</button>
+    </div>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

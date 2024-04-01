@@ -145,7 +145,7 @@ function creazioneGraficoPunti(dati,indexMacchina){
     containerGrafici.appendChild(divGrafico);
 }
 function gestoreGrafico(NM){
-    let requesturl='./dati.json';
+    let requesturl='json/dati.json';
     let request= new XMLHttpRequest();
     request.open('GET',requesturl);
     request.responseType='json';
