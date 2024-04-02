@@ -26,10 +26,8 @@ function gestoreDropdown(){
 
     request.onload = function(){
         dati=request.response;
-        for(let i=0;i<dati.length;i++){
-            let listaDispositivi= dati[i].listaDispositivi
-            aggiornaDropdown(listaDispositivi)
-        }
+        let listaDispositivi= dati.listaDispositivi
+        aggiornaDropdown(listaDispositivi)
     }
 }
 setInterval(gestoreDropdown(),5000);
