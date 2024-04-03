@@ -153,8 +153,7 @@ function gestoreGrafico(NM){
 
     request.onload = function(){
         dati=request.response;
-        for(let i=0;i<dati.length;i++){
-            var listaDispositivi= dati[i].listaDispositivi
+            var listaDispositivi= dati.listaDispositivi
             var indexMacchina=0;
             var nomeMacchina= NM;
             console.log(nomeMacchina);
@@ -168,6 +167,5 @@ function gestoreGrafico(NM){
             creazioneGraficoPunti(listaDispositivi,indexMacchina);
             creazioneGraficoDonut(listaDispositivi,indexMacchina);
         }
-    }
 }
 setInterval(gestoreGrafico(""),5000);

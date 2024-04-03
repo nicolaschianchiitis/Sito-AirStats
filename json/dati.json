@@ -1,5 +1,4 @@
-[
-    {
+{
         "nome":"utente",
         "password":"1234",
         "listaDispositivi":[
@@ -44,5 +43,4 @@
                 ]
             }
         ]
-    }
-]
+}
