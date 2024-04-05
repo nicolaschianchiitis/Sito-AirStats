@@ -81,19 +81,24 @@
     <!-- Form di accesso -->
     <form id="formLogin">
       <div class="mb-3" style="width: 30%; margin-left: 35%;">
-        <label for="email" class="form-label">Email:</label>
-        <input type="email" class="form-control" id="email" placeholder="nome@dominio.it">
-        <span id="infoEmail" class="form-text"></span>
-        <label for="pw" class="col-form-label">Password:</label>
-        <input type="password" id="pw" class="form-control" aria-describedby="passwordHelpInline">
-        <span id="infoPw" class="form-text"></span>
+        <label for="username" class="form-label">Nome utente:</label>
+        <input type="text" class="form-control" id="username" placeholder="username">
+        <span id="msgBoxUsername" class="form-text text-white bg-danger rounded shadow p-1 mb-1" style="display: none;"></span>
         <br>
-        <button type="submit" class="btn btn-success" id="okAccedi" onclick="login()" style="margin-left: 18%;">Conferma</button>
-        <button type="reset" class="btn btn-danger" id="cancellaAccedi" style="margin-left: 15%;">Cancella</button>
+        <label for="password" class="col-form-label">Password:</label>
+        <input type="password" id="password" class="form-control" placeholder="password" aria-describedby="passwordHelpInline">
+        <span id="msgBoxPassword" class="form-text text-white bg-danger rounded shadow p-1 mb-1" style="display: none;"></span>
+        <br>
+        <div id="divBottoni" style="text-align: center; margin: auto; word-spacing: 300%;">
+          <button type="submit" class="btn btn-success" id="btnConferma" onclick="login()">Conferma</button>
+          <button type="reset" class="btn btn-danger" id="btnCanella" onclick="resetForm()">Cancella</button>
+        </div>
+        <br><br>
+        <h4 id="msgBoxErroreAccesso" class="h4 text-white text-center bg-danger text-white rounded shadow p-2 mb-2" style="display: none;">Errore di accesso</h4>
       </div>
     </form>
-    <!-- JS invio dati login -->
-    <script src="js/login.js"></script>
+    <!-- JS: Frontend accesso -->
+    <script src="js/frontendAccesso.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
