@@ -1,0 +1,31 @@
+nav.navbar{
+    width: 94%;
+    margin-left: 3%;
+}
+
+div.iconaUtente{
+    margin-left: 1.5%;
+}
+
+label.userDropdown{
+    margin-left: 1%;
+    margin-top: 1.25%;
+}
+
+img.logo{
+    width: 30px;
+    height: 30px;
+}
+
+div.dataForm{
+    width: 30%;
+    margin-left: 35%;
+    align-content: center;
+}
+
+div.divBottoni{
+    text-align: center;
+    margin: auto;
+    margin-top: 2%;
+    word-spacing: 300%;
+}

@@ -12,6 +12,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Icona favicon -->
     <link rel="icon" type="image/x-icon" href="img/logo.png">
+    <!-- CSS Esterno -->
+    <style>
+      @import url("css/style.css");
+    </style>
     <title>AirStats - Area personale</title>
   </head>
   <body>
@@ -20,7 +24,7 @@
     <nav class="navbar navbar-expand-lg">
       <!--logo più titolo-->
       <a class="navbar-brand" href="index.html">
-        <img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="logo">
+        <img src="img/logo.png" class="d-inline-block align-top logo" alt="logo">
         &nbsp;&nbsp;AIRSTATS
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,7 +65,7 @@
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerca</button>
       </form>
       <!--Menù login-->
-        <div class="nav-item dropdown" style="margin-left: 1.5%;">
+        <div class="nav-item dropdown iconaUtente">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
               <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
@@ -74,7 +78,7 @@
           </ul>
         </div>
         <!-- Utente attualmente connesso -->
-        <p id="utenteConnesso" style="margin-left: 1%; margin-top: 1%;"></p>
+        <label for="utente" id="utenteConnesso" class="userDropdown"></p>
     </nav>
     <!-- Titoli pagina -->
     <h1 class="h1 text-center text-info shadow p-3 mb-5 bg-body-tertiary rounded">CONTATTI</h1>

@@ -44,13 +44,8 @@ function validaInput(){
     msgBoxErroreAccesso.style.display = "none";
 
     // Validazione nome utente
-    if (boxUsername.value == ""){
+    if (!regexUsername.test(boxUsername.value)){
         msgBoxUsername.innerText = "Inserisci un nome utente";
-        msgBoxUsername.style.display = "block";
-        inputValido = false;
-        boxUsername.focus();
-    } else if (!regexUsername.test(boxUsername.value)){
-        msgBoxUsername.innerText = "Formato nome utente non valido";
         msgBoxUsername.style.display = "block";
         inputValido = false;
         boxUsername.focus();
@@ -61,13 +56,8 @@ function validaInput(){
     }
 
     // Validazione password
-    if (boxPassword.value == ""){
+    if (!regexPassword.test(boxPassword.value)){
         msgBoxPassword.innerText = "Inserisci una password";
-        msgBoxPassword.style.display = "block";
-        inputValido = false;
-        boxPassword.focus();
-    } else if (!regexPassword.test(boxPassword.value)){
-        msgBoxPassword.innerText = "Formato password non valido";
         msgBoxPassword.style.display = "block";
         inputValido = false;
         boxPassword.focus();
