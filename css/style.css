@@ -1,6 +1,6 @@
 nav.navbar{
-    width: 94%;
-    margin-left: 3%;
+    width: 90%;
+    margin-left: 5%;
 }
 
 div.iconaUtente{
@@ -28,4 +28,14 @@ div.divBottoni{
     margin: auto;
     margin-top: 2%;
     word-spacing: 300%;
+}
+
+div.card-sx{
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+div.card-dx{
+    margin-left: 53.5%;
+    margin-top: -15%;
 }

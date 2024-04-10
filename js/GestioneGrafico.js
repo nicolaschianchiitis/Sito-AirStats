@@ -71,7 +71,6 @@ function creazioneGraficoBarre(dati,indexMacchina){
 }
 function creazioneGraficoDonut(dati,indexMacchina){
     var [mediePolveri, medieCO2] = calcolaMedia(dati, indexMacchina);
-    var [mediePolveri, medieCO2] = calcolaMedia(dati, indexMacchina);
     var data1 = {
         labels: ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno",
                 "Luglio", "Agosto", "Settembre", "Ottobbre", "Novembre", "Dicembre"],

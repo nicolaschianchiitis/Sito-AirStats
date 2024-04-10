@@ -24,8 +24,8 @@ function login(){
 }
 
 function validaInput(){
-    const regexUsername = /.{1,}/gm
-    const regexPassword = /.{1,}/gm
+    const regexUsername = /^.{1,}$/gm
+    const regexPassword = /^.{1,}$/gm
 
     const boxUsername = document.getElementById("username");
     const boxPassword = document.getElementById("password");
