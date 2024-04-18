@@ -102,6 +102,15 @@ function creazioneGraficoDonut(dati,indexMacchina){
         type: 'doughnut',
         data: data1
     });
+    /*
+    prova a vedere se va
+    var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: data1,
+        'width': 400,
+        'height': 400
+    });
+    */
     var divGrafico = document.createElement('div');
     divGrafico.style.margin = '1%';
     divGrafico.style.width = '50%';
