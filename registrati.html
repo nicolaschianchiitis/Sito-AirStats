@@ -82,6 +82,38 @@
     </nav>
     <!-- Titoli pagina -->
     <h1 class="h1 text-center text-info shadow p-3 mb-5 bg-body-tertiary rounded">REGISTRATI</h1>
+    <!-- Form di registrazione -->
+    <h5 class="text-center text-info">Nota bene: i campi contrassegnati dall'asterisco rosso <label style="color: red;">*</label> sono obbligatori!</h4><br>
+    <form id="formRegister">
+      <div class="mb-3 dataForm">
+        <label for="username" class="form-label">Nome utente: <label style="color: red;">*</label></label>
+        <input type="text" class="form-control" id="username" placeholder="username">
+        <span id="msgBoxUsername" class="form-text text-white bg-danger rounded shadow p-1 mb-1" style="display: none;"></span>
+        <br>
+        <label for="password" class="col-form-label">Password: <label style="color: red;">*</label></label>
+        <input type="password" id="password" class="form-control" placeholder="password" aria-describedby="passwordHelpInline">
+        <span id="msgBoxPassword" class="form-text text-white bg-danger rounded shadow p-1 mb-1" style="display: none;"></span>
+        <br>
+        <label for="password" class="col-form-label">Conferma password: <label style="color: red;">*</label></label>
+        <input type="password" id="password" class="form-control" placeholder="conferma password" aria-describedby="passwordHelpInline">
+        <span id="msgBoxPasswordCheck" class="form-text text-white bg-danger rounded shadow p-1 mb-1" style="display: none;"></span>
+        <br>
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="email (es. utente@dominio.it)">
+        <span id="msgBoxEmail" class="form-text text-white bg-danger rounded shadow p-1 mb-1" style="display: none;"></span>
+        <br>
+        <label for="tel" class="form-label">Numero di telefono:</label>
+        <input type="tel" class="form-control" id="tel" placeholder="numero di telefono (es. +39 123 456 7890)">
+        <span id="msgBoxTel" class="form-text text-white bg-danger rounded shadow p-1 mb-1" style="display: none;"></span>
+        <br>
+        <div class="divBottoni" id="divBottoni">
+          <button type="submit" class="btn btn-success" id="btnConferma" onclick="login()">Conferma</button>
+          <button type="reset" class="btn btn-danger" id="btnCanella" onclick="resetForm()">Cancella</button>
+        </div>
+        <br><br>
+        <h4 id="msgBoxErroreAccesso" class="h4 text-white text-center bg-danger text-white rounded shadow p-2 mb-2" style="display: none;">Errore di accesso</h4>
+      </div>
+    </form>
     <!-- Piè di pagina -->
     <footer class="footer nav-underline">
       <h6 class="text-center">------------ Link rapidi ------------</h6>
