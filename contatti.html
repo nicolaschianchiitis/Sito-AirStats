@@ -24,21 +24,21 @@
     <nav class="navbar navbar-expand-lg">
       <!--logo più titolo-->
       <a class="navbar-brand" href="index.html">
-        <img src="img/logo.png" class="d-inline-block align-top logo" alt="logo">
+        <img src="assets/img/logo.png" class="d-inline-block align-top logo" alt="logo">
         &nbsp;&nbsp;AIRSTATS
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav nav-underline">
           <li class="nav-item active">
             <!--link per tornare alla home-->
             <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
           </li>
           <!--link per tornare per le altre pagine-->
           <li class="nav-item">
-            <a class="nav-link" href="contatti.html">Contatti</a>
+            <a class="nav-link text-info active" href="contatti.html">Contatti</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="chi-siamo.html">Chi siamo?</a>
@@ -82,6 +82,29 @@
     </nav>
     <!-- Titoli pagina -->
     <h1 class="h1 text-center text-info shadow p-3 mb-5 bg-body-tertiary rounded">CONTATTI</h1>
+    <!-- Piè di pagina -->
+    <footer class="footer nav-underline">
+      <h6 class="text-center">------------ Link rapidi ------------</h6>
+      <div class="navbar footer">
+        <!--link per tornare alla home-->
+        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        <!--link per tornare per le altre pagine-->
+        <a class="nav-link" href="contatti.html">Contatti</a>
+        <a class="nav-link" href="chi-siamo.html">Chi siamo?</a>
+        <a class="nav-link" href="area-personale.html">Area personale</a>
+        <!--Menù servizi-->
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Servizi
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="abbonamenti.html">Abbonamenti</a>
+            <a class="dropdown-item" href="soluzioni-piante.html">Soluzioni Piante</a>
+            <a class="dropdown-item" href="soluzioni-vernici.html">Soluzioni Vernici</a>
+          </div>
+        </div>
+      </div>
+    </footer>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

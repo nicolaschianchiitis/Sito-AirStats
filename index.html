@@ -16,55 +16,55 @@
     <style>
       @import url("css/style.css");
     </style>
-    <title>AirStats - Area personale</title>
+    <title>AirStats - Home</title>
   </head>
   <body>
     <div class="container-xl">
       <!-- barra navigatrice-->
-    <nav class="navbar navbar-expand-lg">
-      <!--logo più titolo-->
-      <a class="navbar-brand" href="index.html">
-        <img src="img/logo.png" class="d-inline-block align-top logo" alt="logo">
-        &nbsp;&nbsp;AIRSTATS
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <!--link per tornare alla home-->
-            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <!--link per tornare per le altre pagine-->
-          <li class="nav-item">
-            <a class="nav-link" href="contatti.html">Contatti</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="chi-siamo.html">Chi siamo?</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="area-personale.html">Area personale</a>
+      <nav class="navbar navbar-expand-lg">
+        <!--logo più titolo-->
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/img/logo.png" class="d-inline-block align-top logo" alt="logo">
+          &nbsp;&nbsp;AIRSTATS
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav nav-underline">
+            <li class="nav-item">
+              <!--link per tornare alla home-->
+              <a class="nav-link text-info active" href="index.html">Home <span class="sr-only">(current)</span></a>
             </li>
-          <!--Menù servizi-->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Servizi
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="abbonamenti.html">Abbonamenti</a>
-              <a class="dropdown-item" href="soluzioni-piante.html">Soluzioni Piante</a>
-              <a class="dropdown-item" href="soluzioni-vernici.html">Soluzioni Vernici</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <!--Barra di ricerca-->
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Cerca nel sito..." aria-label="Cerca">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerca</button>
-      </form>
-      <!--Menù login-->
+            <!--link per tornare per le altre pagine-->
+            <li class="nav-item">
+              <a class="nav-link" href="contatti.html">Contatti</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="chi-siamo.html">Chi siamo?</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="area-personale.html">Area personale</a>
+              </li>
+            <!--Menù servizi-->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Servizi
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="abbonamenti.html">Abbonamenti</a>
+                <a class="dropdown-item" href="soluzioni-piante.html">Soluzioni Piante</a>
+                <a class="dropdown-item" href="soluzioni-vernici.html">Soluzioni Vernici</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!--Barra di ricerca-->
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Cerca nel sito..." aria-label="Cerca">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerca</button>
+        </form>
+        <!--Menù login-->
         <div class="nav-item dropdown iconaUtente">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -79,80 +79,115 @@
         </div>
         <!-- Utente attualmente connesso -->
         <label for="utente" id="utenteConnesso" class="userDropdown"></p>
-    </nav>
-    <!-- Contenuto pagina -->
-    <!-- Cards contenuto -->
-    <div class="shadow p-3 mb-5 bg-body-tertiary rounded" id="homeDiv" style="height: fit-content;">
-      <h1 class="h1 text-center text-info">HOME PAGE</h1>
-      <div class="row row-cols-1 row-cols-md-2 g-4" style="margin-top: 1.5%;">
-        <div class="card mb-3 card-sx bg-body-tertiary border-0" style="max-width: 540px;">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="img/logo.png" class="img-fluid rounded-start" alt="logo">
+      </nav>
+      <!-- Contenuto pagina -->
+      <!-- Cards contenuto -->
+      <div class="shadow p-3 mb-5 bg-body-tertiary rounded" id="homeDiv" style="height: fit-content;">
+        <h1 class="h1 text-center text-info">HOME PAGE</h1>
+        <div class="row row-cols-1 row-cols-md-2 g-4" style="margin-top: 1.5%;">
+          <div class="card mb-3 card-sx bg-body-tertiary border-0" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="assets/img/logo.png" class="img-fluid rounded-start" alt="logo">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title text-info">AirStats</h5>
+                  <p class="card-text">Monitorare la qualit&agrave; dell'aria
+                    non &egrave; mai stato cos&igrave; semplice!
+                  </p>
+                  <p class="card-text"><small class="text-body-secondary">
+                      Naviga nel sito per pi&ugrave; informazioni...</small></p>
+                </div>
+              </div>
             </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title text-info">AirStats</h5>
-                <p class="card-text">Monitorare la qualit&agrave; dell'aria
-                  non &egrave; mai stato cos&igrave; semplice!
-                </p>
-                <p class="card-text"><small class="text-body-secondary">
-                  Naviga nel sito per pi&ugrave; informazioni...</small></p>
+          </div>
+          <div class="card mb-3 card-dx bg-body-tertiary border-0" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="assets/img/grafico-ciambella.png" class="img-fluid rounded-start" alt="grafico-ciambella"
+                  style="margin-top: 25%;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title text-warning">Medie mensili e annuali</h5>
+                  <p class="card-text">Il nostro sistema permette di visualizzare
+                    i dati di rilevazione di CO<sub>2</sub> e PM10 sotto forma
+                    di grafici a barre e a ciambella, che registrano le medie
+                    a livello mensile ed annuale, proponendo soluzioni opportune.
+                  </p>
+                  <p class="card-text"><small class="text-body-secondary">
+                      Puoi richiederci una dimostrazione gratuita: se ti piace,
+                      registrati ed acquista un abbonamento!
+                    </small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3 card-sx bg-body-tertiary border-0" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="assets/img/cortile-itis.png" class="img-fluid rounded" alt="cortile-itis" style="margin-top: 30%;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title" style="color: orangered;">Startup 100% parmigiana</h5>
+                  <p class="card-text">La nostra startup &egrave; nata a Parma, all'ITIS
+                    Leonardo da Vinci, durante il progetto InVento Lab.
+                  </p>
+                  <p class="card-text"><small class="text-body-secondary">
+                      Vorremmo proporre le nostre soluzioni sia alle scuole che
+                      agli edifici pubblici, ma nulla vieta ai privati di provarle!
+                    </small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3 card-dx bg-body-tertiary border-0" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="assets/img/like.png" class="img-fluid rounded-start" alt="like" style="margin-top: 20%;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title text-primary-emphasis">Resta aggiornato sulle ultime novit&agrave;</h5>
+                  <p class="card-text">
+                    Seguici sui social per non perderti alcun aggiornamento sul nostro operato e sulle
+                    soluzioni che proponiamo!
+                  </p>
+                  <p class="card-text"><small class="text-body-secondary">
+                      Per restare aggiornato, visita la scheda contatti...
+                    </small></p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="card mb-3 card-dx bg-body-tertiary border-0" style="max-width: 540px;">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="img/grafico-ciambella.png" class="img-fluid rounded-start" alt="grafico-ciambella">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title text-warning">Medie mensili e annuali</h5>
-                <p class="card-text">Il nostro sistema permette di visualizzare
-                  i dati di rilevazione di CO<sub>2</sub> e PM10 sotto forma
-                  di grafici a barre e a ciambella, che registrano le medie
-                  a livello mensile ed annuale, proponendo soluzioni opportune.
-                </p>
-                <p class="card-text"><small class="text-body-secondary">
-                  Puoi richiederci una dimostrazione gratuita: se ti piace,
-                  registrati ed acquista un abbonamento!
-                </small></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card mb-3 card-sx bg-body-tertiary border-0" style="max-width: 540px;">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="..." class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card mb-3 card-dx bg-body-tertiary border-0" style="max-width: 540px;">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="..." class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
+        <h4 class="h4 text-center text-info">Ora non ti resta altro che esplorare il sito... buona permanenza! =)</h4>
+      </div>
+      <!-- Piè di pagina -->
+    <footer class="footer nav-underline">
+      <h6 class="text-center">------------ Link rapidi ------------</h6>
+      <div class="navbar footer">
+        <!--link per tornare alla home-->
+        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        <!--link per tornare per le altre pagine-->
+        <a class="nav-link" href="contatti.html">Contatti</a>
+        <a class="nav-link" href="chi-siamo.html">Chi siamo?</a>
+        <a class="nav-link" href="area-personale.html">Area personale</a>
+        <!--Menù servizi-->
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Servizi
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="abbonamenti.html">Abbonamenti</a>
+            <a class="dropdown-item" href="soluzioni-piante.html">Soluzioni Piante</a>
+            <a class="dropdown-item" href="soluzioni-vernici.html">Soluzioni Vernici</a>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

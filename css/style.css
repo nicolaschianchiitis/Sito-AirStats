@@ -1,6 +1,15 @@
-nav.navbar{
+nav.navbar, footer.footer, footer.navbar{
     width: 90%;
     margin-left: 5%;
+}
+
+footer.footer{
+    margin-top: -1%;
+}
+
+div.footer{
+    margin-left: 20%;
+    width: 60%;
 }
 
 div.iconaUtente{
