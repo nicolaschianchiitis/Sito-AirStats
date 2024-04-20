@@ -15,6 +15,8 @@ function login(){
                 } else{
                     mostra il messaggio di errore di accesso (message box);
                 }
+
+                trasmetti al server usando il dataToJSON()
             */
         } else{
             
@@ -43,13 +45,17 @@ function validaInput(){
     msgBoxPassword.innerText = "";
     msgBoxErroreAccesso.style.display = "none";
 
+    const classeCampiForm = "form-control";
+
     // Validazione nome utente
     if (!regexUsername.test(boxUsername.value)){
+        boxUsername.className += " border-danger";
         msgBoxUsername.innerText = "Inserisci un nome utente";
         msgBoxUsername.style.display = "block";
         inputValido = false;
         boxUsername.focus();
     } else{
+        boxUsername.className = classeCampiForm;
         msgBoxUsername.style.display = "none";
         msgBoxUsername.innerText = "";
         inputValido = true;
@@ -57,11 +63,13 @@ function validaInput(){
 
     // Validazione password
     if (!regexPassword.test(boxPassword.value)){
+        boxPassword.className += " border-danger";
         msgBoxPassword.innerText = "Inserisci una password";
         msgBoxPassword.style.display = "block";
         inputValido = false;
         boxPassword.focus();
     } else{
+        boxPassword.className = classeCampiForm;
         msgBoxPassword.style.display = "none";
         msgBoxPassword.innerText = "";
         inputValido = true;
@@ -86,4 +94,16 @@ function resetForm(){
     msgBoxPassword.innerText = "";
     msgBoxErroreAccesso.style.display = "none";
     msgBoxErroreAccesso.innerText = "";
+}
+
+function dataToJSON(){
+    const boxUsername = document.getElementById("username");
+    const boxPassword = document.getElementById("password");
+
+    let data = {
+        "username": boxUsername.value,
+        "password": boxPassword.value
+    };
+
+    return data;
 }
