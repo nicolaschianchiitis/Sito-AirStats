@@ -89,14 +89,14 @@ function resetForm(){
     // Reset message boxes
     const msgBoxUsername = document.getElementById("msgBoxUsername");
     const msgBoxPassword = document.getElementById("msgBoxPassword");
-    const msgBoxErroreAccesso = document.getElementById("msgBoxErroreAccesso");
+    const msgBoxErroreComunicazione = document.getElementById("msgBoxErroreComunicazione");
 
     msgBoxUsername.style.display = "none";
     msgBoxUsername.innerText = "";
     msgBoxPassword.style.display = "none";
     msgBoxPassword.innerText = "";
-    msgBoxErroreAccesso.style.display = "none";
-    msgBoxErroreAccesso.innerText = "";
+    msgBoxErroreComunicazione.style.display = "none";
+    msgBoxErroreComunicazione.innerText = "";
 
     const boxUsername = document.getElementById("username");
     const boxPassword = document.getElementById("password");

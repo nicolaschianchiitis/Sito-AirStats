@@ -40,7 +40,7 @@ function validaInput(){
     const msgBoxPasswordCheck = document.getElementById("msgBoxPasswordCheck");
     const msgBoxEmail = document.getElementById("msgBoxEmail");
     const msgBoxNumTelefono = document.getElementById("msgBoxTel");
-    const msgBoxErroreAccesso = document.getElementById("msgBoxErroreAccesso");
+    const msgBoxErroreComunicazione = document.getElementById("msgBoxErroreComunicazione");
     const msgBoxRequired = document.getElementById("msgBoxRequired");
 
     const classeCampiForm = "form-control";
@@ -56,7 +56,6 @@ function validaInput(){
             boxUsername.className += " border-danger";
             msgBoxUsername.innerText = "Formato del nome utente non corretto";
             msgBoxUsername.style.display = "block";
-            boxUsername.focus();
             inputValido = false;
         } else{
             boxUsername.className = classeCampiForm;
@@ -70,7 +69,6 @@ function validaInput(){
             boxPassword.className += " border-danger";
             msgBoxPassword.innerText = "Formato della password non corretto";
             msgBoxPassword.style.display = "block";
-            boxPassword.focus();
             inputValido = false;
         } else{
             boxPassword.className = classeCampiForm;
@@ -84,7 +82,6 @@ function validaInput(){
             boxPasswordCheck.className += " border-danger";
             msgBoxPasswordCheck.innerText = "La password è diversa da quella inserita in questo campo: reinseriscila";
             msgBoxPasswordCheck.style.display = "block";
-            boxPasswordCheck.focus();
             inputValido = false;
         } else{
             boxPasswordCheck.className = classeCampiForm;
@@ -107,7 +104,6 @@ function validaInput(){
             boxEmail.className += " border-danger";
             msgBoxEmail.innerText = "Formato dell'email non corretto";
             msgBoxEmail.style.display = "block";
-            boxEmail.focus();
             inputValido = false;
         } else{
             msgBoxEmail.style.display = "none";
@@ -127,13 +123,27 @@ function validaInput(){
             boxNumTelefono.className += " border-danger";
             msgBoxNumTelefono.innerText = "Formato del numero di telefono non corretto";
             msgBoxNumTelefono.style.display = "block";
-            boxNumTelefono.focus();
             inputValido = false;
         } else{
             msgBoxNumTelefono.style.display = "none";
             msgBoxNumTelefono.innerText = "";
             boxNumTelefono.className = classeCampiForm;
             inputValido = true;
+        }
+    }
+
+    // Determina il campo su cui fare il focus
+    if (!inputValido){
+        if (!regexUsername.test(boxUsername.value)){
+            boxUsername.focus();
+        } else if (!regexPassword.test(boxPassword.value)){
+            boxPassword.focus();
+        } else if (!boxPassword.value == boxPasswordCheck.value){
+            boxPasswordCheck.focus();
+        } else if (!regexEmail.test(boxEmail.value)){
+            boxEmail.focus();
+        } else{
+            boxNumTelefono.focus();
         }
     }
 
@@ -151,7 +161,7 @@ function resetForm(){
     const msgBoxPasswordCheck = document.getElementById("msgBoxPasswordCheck");
     const msgBoxEmail = document.getElementById("msgBoxEmail");
     const msgBoxNumTelefono = document.getElementById("msgBoxTel");
-    const msgBoxErroreAccesso = document.getElementById("msgBoxErroreAccesso");
+    const msgBoxErroreComunicazione = document.getElementById("msgBoxErroreComunicazione");
     const msgBoxRequired = document.getElementById("msgBoxRequired");
 
     const boxUsername = document.getElementById("username");
@@ -172,8 +182,8 @@ function resetForm(){
     msgBoxEmail.innerText = "";
     msgBoxNumTelefono.style.display = "none";
     msgBoxNumTelefono.innerText = "";
-    msgBoxErroreAccesso.style.display = "none";
-    msgBoxErroreAccesso.innerText = "";
+    msgBoxErroreComunicazione.style.display = "none";
+    msgBoxErroreComunicazione.innerText = "";
     msgBoxRequired.style.display = "none";
 
     boxUsername.className = classeCampiForm;
