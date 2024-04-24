@@ -84,15 +84,17 @@
     <h1 class="h1 text-center text-info shadow p-3 mb-5 bg-body-tertiary rounded">REGISTRATI</h1>
     <!-- Form di registrazione -->
     <h5 class="text-center text-info">Nota bene: i campi contrassegnati dall'asterisco rosso <label style="color: red;">*</label> sono obbligatori!</h4><br>
-    <span id="msgBoxRequired" class="form-text text-white bg-danger rounded shadow p-1 mb-1" style="display: none;">Attenzione: devi compilare almeno i campi obbligatori!</span>
+    <span id="msgBoxRequired" class="form-text text-center text-white bg-danger rounded shadow p-1 mb-1" style="display: none; width: fit-content; margin-left: 37%;">Attenzione: devi compilare almeno i campi obbligatori!</span>
+    <br>
     <form id="formRegister">
       <div class="mb-3 dataForm">
         <label for="username" class="form-label">Nome utente: <label style="color: red;">*</label></label>
-        <input type="text" class="form-control" id="username" placeholder="username">
+        <input type="text" class="form-control" id="username" placeholder="username (es. utente1)">
         <span id="msgBoxUsername" class="form-text text-white bg-danger rounded shadow p-1 mb-1" style="display: none;"></span>
         <br>
         <label for="password" class="col-form-label">Password: <label style="color: red;">*</label></label>
-        <input type="password" id="password" class="form-control" placeholder="password" aria-describedby="passwordHelpInline">
+        <input type="password" id="password" class="form-control" placeholder="password (almeno 8 caratteri)" aria-describedby="passwordHelpInline">
+        <label for="password" style="font-size: 15px;">La password deve contenere almeno: una lettera maiuscola; una lettera minuscola; un numero; un carattere speciale tra @$!%*#?&,;\.:\-_<>^</label>
         <span id="msgBoxPassword" class="form-text text-white bg-danger rounded shadow p-1 mb-1" style="display: none;"></span>
         <br>
         <label for="password" class="col-form-label">Conferma password: <label style="color: red;">*</label></label>

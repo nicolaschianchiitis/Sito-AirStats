@@ -53,12 +53,10 @@ function validaInput(){
         msgBoxUsername.innerText = "Inserisci un nome utente";
         msgBoxUsername.style.display = "block";
         inputValido = false;
-        boxUsername.focus();
     } else{
         boxUsername.className = classeCampiForm;
         msgBoxUsername.style.display = "none";
         msgBoxUsername.innerText = "";
-        inputValido = true;
     }
 
     // Validazione password
@@ -67,12 +65,17 @@ function validaInput(){
         msgBoxPassword.innerText = "Inserisci una password";
         msgBoxPassword.style.display = "block";
         inputValido = false;
-        boxPassword.focus();
     } else{
         boxPassword.className = classeCampiForm;
         msgBoxPassword.style.display = "none";
         msgBoxPassword.innerText = "";
-        inputValido = true;
+    }
+
+    // Determinazione del campo da mettere in evidenza (focus)
+    if (!regexPassword.test(boxUsername.value)){
+        boxUsername.focus();
+    } else{
+        boxPassword.focus();
     }
 
     return inputValido;
@@ -94,6 +97,14 @@ function resetForm(){
     msgBoxPassword.innerText = "";
     msgBoxErroreAccesso.style.display = "none";
     msgBoxErroreAccesso.innerText = "";
+
+    const boxUsername = document.getElementById("username");
+    const boxPassword = document.getElementById("password");
+
+    const classeCampiForm = "form-control";
+
+    boxUsername.className = classeCampiForm;
+    boxPassword.className = classeCampiForm;
 }
 
 function dataToJSON(){
