@@ -11,37 +11,37 @@ function resetContainerGrafico(){
 
 function calcolaMedia(dati,indexMacchina){
     var mediePolveri = [0,0,0,0,0,0,0,0,0,0,0,0];
-    var medieCO2 = [0,0,0,0,0,0,0,0,0,0,0,0];
-    var mediecCO2 = [0,0,0,0,0,0,0,0,0,0,0,0];//contatori
+    var medieCO = [0,0,0,0,0,0,0,0,0,0,0,0];
+    var mediecCO = [0,0,0,0,0,0,0,0,0,0,0,0];//contatori
     var mediecPolveri = [0,0,0,0,0,0,0,0,0,0,0,0];//contatori
     var listaDati = dati[indexMacchina].listaDati;
     listaDati.forEach(dato => {    
-        medieCO2[(dato.mese)-1] += dato.co2;
-        mediecCO2[(dato.mese)-1] += 1;
+        medieCO[(dato.mese)-1] += dato.co2;
+        mediecCO[(dato.mese)-1] += 1;
         mediePolveri[(dato.mese)-1] += dato.polveriSottili;
         mediecPolveri[(dato.mese)-1] += 1;
     });
     for(let i = 0; i < 12; i++){
-        if(medieCO2[i] != 0){
-            medieCO2[i] = medieCO2[i] / mediecCO2[i];
+        if(medieCO[i] != 0){
+            medieCO[i] = medieCO[i] / mediecCO[i];
         }
         if(mediePolveri[i] != 0){
             mediePolveri[i] = mediePolveri[i] / mediecPolveri[i];
         }
     }
-    return [mediePolveri, medieCO2];
+    return [mediePolveri, medieCO];
 }
 function creazioneGraficoBarre(dati,indexMacchina){
-    var [mediePolveri, medieCO2] = calcolaMedia(dati, indexMacchina);
+    var [mediePolveri, medieCO] = calcolaMedia(dati, indexMacchina);
     var data = {
         labels: ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno",
                 "Luglio", "Agosto", "Settembre", "Ottobbre", "Novembre", "Dicembre"],
         datasets: [
             {
-                label: "CO2",
+                label: "CO",
                 backgroundColor: "rgba(0, 102, 204, 1)",
                 borderColor: "rgba(99, 240, 220, 1)",
-                data: medieCO2
+                data: medieCO
             },
             {
                 label: "POLVERI SOTTILI",
@@ -73,14 +73,14 @@ function creazioneGraficoBarre(dati,indexMacchina){
 }
 
 function creazioneGraficoDonut(dati,indexMacchina){
-    var [mediePolveri, medieCO2] = calcolaMedia(dati, indexMacchina);
+    var [mediePolveri, medieCO] = calcolaMedia(dati, indexMacchina);
     var data1 = {
         labels: ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno",
                 "Luglio", "Agosto", "Settembre", "Ottobbre", "Novembre", "Dicembre"],
         datasets: [
             {
-                label: 'CO2',
-                data: medieCO2,
+                label: 'CO',
+                data: medieCO,
                 backgroundColor: [
                   'rgb(255, 99, 132)',
                   'rgb(54, 162, 235)',
@@ -125,17 +125,17 @@ function creazioneGraficoDonut(dati,indexMacchina){
 }
 
 function creazioneGraficoPunti(dati, indexMacchina){
-    var [mediePolveri, medieCO2] = calcolaMedia(dati, indexMacchina);
+    var [mediePolveri, medieCO] = calcolaMedia(dati, indexMacchina);
     var data = {
         labels: ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio",
                 "Agosto", "Settembre", "Ottobbre", "Novembre", "Dicembre"],
         datasets: [
             {
-                label: "CO2",
+                label: "CO",
                 fill: true,
                 backgroundColor: "rgba(0, 102, 204, 1)",
                 borderColor: "rgba(0, 102, 204, 1)",
-                data: medieCO2
+                data: medieCO
             },
             {
                 label: "POLVERI SOTTILI",
