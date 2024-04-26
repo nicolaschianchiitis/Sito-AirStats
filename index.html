@@ -163,7 +163,10 @@
             </div>
           </div>
         </div>
-        <h4 class="h4 text-center text-info">Ora non ti resta altro che esplorare il sito... buona permanenza! =)</h4>
+        <br>
+        <button class="btn btn-success rounded" id="btnVolantino" style="margin-left: 43.25%; margin-bottom: 2%;" onclick="valutaStatoVolantino()">Mostra il volantino</button>
+        <img src="assets/img/volantino.png" alt="volantino" id="volantino" class="shadow rounded" style="display: none; width: 40%; margin-left: 30%; margin-bottom: 2%;">
+        <h4 class="h4 text-center text-info">Ora non ti resta altro che esplorare il sito... buona permanenza! 😄</h4>
       </div>
       <!-- Piè di pagina -->
     <footer class="footer nav-underline">
@@ -193,5 +196,26 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+      function valutaStatoVolantino(){
+        const volantino = document.getElementById("volantino");
+        const bottone = document.getElementById("btnVolantino");
+
+        const classeBtnVerde = "btn btn-success rounded";
+        const txtBtnVerde = "Mostra il volantino";
+        const classeBtnRosso = "btn btn-danger rounded";
+        const txtBtnRosso = "Nascondi il volantino";
+
+        if (volantino.style.display == "none"){
+          volantino.style.display = "block";
+          bottone.className = classeBtnRosso;
+          bottone.innerText = txtBtnRosso;
+        } else{
+          volantino.style.display = "none";
+          bottone.className = classeBtnVerde;
+          bottone.innerText = txtBtnVerde;
+        }
+      }
+    </script>
   </body>
 </html>

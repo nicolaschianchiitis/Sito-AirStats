@@ -17,6 +17,24 @@ function aggiornaDropdown(dati){
         dropdownCorrente.appendChild(newLi);
     }
 }
+
+function evidenziaDispositivo(){
+    // Evidenzia nel dropdown il dispositivo attualmente selezionato
+    var labelNomeDispositivo = document.getElementById("nomeDispositivo");
+    // Ottieni tutte le macchine
+    var contenutoDropdown = document.querySelectorAll("ul#elencoDispositivi li a");
+    const classeElementoNormale = "dropdown-item";
+    const classeElementoAttivo = "dropdown-item active";
+
+    for (let i = 0; i < contenutoDropdown.length; i++){
+        if (contenutoDropdown[i].textContent == labelNomeDispositivo.textContent){
+            contenutoDropdown[i].className = classeElementoAttivo;
+        } else{
+            contenutoDropdown[i].className = classeElementoNormale;
+        }
+    }
+}
+
 function gestoreDropdown(){
     let requesturl = 'json/dati.json';
     let request = new XMLHttpRequest();

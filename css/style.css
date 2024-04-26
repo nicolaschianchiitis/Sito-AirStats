@@ -48,3 +48,7 @@ div.card-dx{
     margin-left: 53.5%;
     margin-top: -15%;
 }
+
+li.li-marker-info::marker{
+    color: rgb(95, 199, 236);
+}

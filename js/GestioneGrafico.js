@@ -8,6 +8,7 @@ function resetContainerGrafico(){
         containerGrafici2.removeChild(containerGrafici2.childNodes[2]);
     }
 }
+
 function calcolaMedia(dati,indexMacchina){
     var mediePolveri = [0,0,0,0,0,0,0,0,0,0,0,0];
     var medieCO2 = [0,0,0,0,0,0,0,0,0,0,0,0];
@@ -61,6 +62,7 @@ function creazioneGraficoBarre(dati,indexMacchina){
     divGrafico.className = 'col';
     var labelNomeDispositivo = document.createElement('h1');
     var nomeDispositivo = dati[indexMacchina].name;
+    labelNomeDispositivo.id = "nomeDispositivo";
     labelNomeDispositivo.textContent = nomeDispositivo;
     labelNomeDispositivo.style.marginLeft = "1.25%";
     labelNomeDispositivo.style.marginBottom = "1.25%";
@@ -69,6 +71,7 @@ function creazioneGraficoBarre(dati,indexMacchina){
     containerGrafici.appendChild(labelNomeDispositivo);
     containerGrafici.appendChild(divGrafico);
 }
+
 function creazioneGraficoDonut(dati,indexMacchina){
     var [mediePolveri, medieCO2] = calcolaMedia(dati, indexMacchina);
     var data1 = {
@@ -156,6 +159,7 @@ function creazioneGraficoPunti(dati, indexMacchina){
     divGrafico.appendChild(ctx)
     containerGrafici.appendChild(divGrafico);
 }
+
 function gestoreGrafico(NM){
     let requesturl = 'json/dati.json';
     let request = new XMLHttpRequest();
@@ -166,7 +170,7 @@ function gestoreGrafico(NM){
     request.onload = function(){
         dati = request.response;
             var listaDispositivi = dati.listaDispositivi
-            var indexMacchina =0;
+            var indexMacchina = 0;
             var nomeMacchina = NM;
             console.log(nomeMacchina);
             for(let i2 = 0; i2 < listaDispositivi.length; i2++){
